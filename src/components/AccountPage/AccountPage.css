@@ -1,16 +1,28 @@
-.main-box{
+.main-box {
   width: 100vw;
   display: flex;
   justify-content: space-around;
 }
 
-.form-box{
+.form-box {
   width: 45%;
   display: flex;
   flex-direction: column;
 }
 
-.form-box h3{
+.form-box h3 {
   margin-left: auto;
   margin-right: auto;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-form input {
+  margin: 25px 0px;
+  border-radius: 15px;
+  width: 75%;
 }
