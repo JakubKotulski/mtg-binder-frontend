@@ -3,12 +3,8 @@ import { Button } from "react-bootstrap";
 import axios from "axios";
 
 const LoginForm = () => {
-  
-
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
-
-  
 
   const onChangeLoginUsername = (event) => {
     setLoginUsername(event.target.value);
@@ -17,8 +13,6 @@ const LoginForm = () => {
   const onChangeloginPassword = (event) => {
     setLoginPassword(event.target.value);
   };
-
-  
 
   const login = () => {
     axios({
