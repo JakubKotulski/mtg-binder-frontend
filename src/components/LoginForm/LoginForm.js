@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import axios from "axios";
 
 const LoginForm = () => {
+  const history = useHistory();
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
@@ -25,7 +27,7 @@ const LoginForm = () => {
       url: "http://localhost:4000/login",
     }).then((res) => {
       if (res.data === "Successfully Authenticated") {
-        localStorage.setItem("token", res.data);
+        history.push("/user-panel");
       } else {
         console.log(res.data);
       }
