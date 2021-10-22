@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+
 
 const TemporaryAuthorization = () => {
   const [linkText, setLinkText] = useState("Account");
   const [linkPath, setLinkPath] = useState("/account");
+  const [username, setUsername] = useState("");
 
-  const getUser = () => {
+  const getUser = useCallback(() => {
     axios({
       method: "GET",
       withCredentials: true,
@@ -16,14 +18,27 @@ const TemporaryAuthorization = () => {
         return 0;
       } else {
         setLinkText("Your account");
-        setLinkPath("/user-panel")
+        setLinkPath("/user-panel");
+        setUsername(`user: ${res.data.username}`);
       }
     });
-  };
+  },[]);
 
-  getUser();
+  useEffect(() => {
+    getUser();
+  }, [getUser]);
 
-  return <Link to={linkPath}>{linkText}</Link>;
+  return (
+    <ul>
+      <Link to={linkPath}>
+        <li>{linkText}</li>
+      </Link>
+      <Link to="/">
+        <li>Home</li>
+      </Link>
+      <li>{username}</li>
+    </ul>
+  );
 };
 
 export default TemporaryAuthorization;
