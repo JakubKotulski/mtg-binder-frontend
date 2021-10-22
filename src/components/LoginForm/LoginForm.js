@@ -24,7 +24,7 @@ const LoginForm = () => {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4000/login",
+      url: "http://localhost:4000/users/login",
     }).then((res) => {
       if (res.data === "Successfully Authenticated") {
         history.push("/user-panel");

@@ -22,7 +22,7 @@ const SignupForm = () => {
         password: signupPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4000/register",
+      url: "http://localhost:4000/users",
     }).then((res) => console.log(res));
   };
   return (

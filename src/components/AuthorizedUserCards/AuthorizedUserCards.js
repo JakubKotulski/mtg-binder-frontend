@@ -10,7 +10,7 @@ const AuthorizedUserCards = ({ cards }) => {
               <th>Nr</th>
               <th>Name</th>
               <th>Price</th>
-              <th>Options</th>
+              <th>Card</th>
             </tr>
           </thead>
           <tbody>
@@ -19,7 +19,7 @@ const AuthorizedUserCards = ({ cards }) => {
                 <td> {index + 1} </td>
                 <td> {card.name} </td>
                 <td> {card.price} </td>
-                <td> Options </td>
+                <td> <img src={card.url} alt="img" /> </td>
               </tr>
             ))}
           </tbody>
