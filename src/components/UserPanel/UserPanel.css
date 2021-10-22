@@ -1,0 +1,22 @@
+.header-flex-custom {
+  background-color: #e1dfe0;
+  border-radius: 10px;
+}
+
+.header-flex-custom h3 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 20px 0px;
+}
+
+.container-md .row .margin-custom {
+  padding: 0px 0px;
+  margin-top: 20px;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.container-md .row .margin-custom table {
+  margin: 0;
+}
