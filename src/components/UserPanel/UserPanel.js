@@ -14,7 +14,7 @@ const UserPanel = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/user",
+      url: "http://localhost:4000/users/me",
     }).then((res) => {
       if (res.data.username === null) {
         history.push("/");
@@ -28,7 +28,7 @@ const UserPanel = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/logged-user-cards",
+      url: "http://localhost:4000/cards/my",
     }).then((res) => {
       console.log(res.data);
       setCards(res.data);

@@ -12,7 +12,7 @@ const TemporaryAuthorization = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/user",
+      url: "http://localhost:4000/users/me",
     }).then((res) => {
       if (res.data.username === null) {
         return 0;

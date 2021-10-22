@@ -20,3 +20,13 @@
 .container-md .row .margin-custom table {
   margin: 0;
 }
+
+.container-md .row .margin-custom table tr td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.container-md .row .margin-custom table th {
+  vertical-align: middle;
+  text-align: center;
+}
