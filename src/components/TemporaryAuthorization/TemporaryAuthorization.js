@@ -14,12 +14,10 @@ const TemporaryAuthorization = () => {
       withCredentials: true,
       url: "http://localhost:4000/users/me",
     }).then((res) => {
-      if (res.data.username === null) {
-        return 0;
-      } else {
+      if (res.data.username) {
         setLinkText("Your account");
         setLinkPath("/user-panel");
-        setUsername(`user: ${res.data.username}`);
+        setUsername(res.data.username);
       }
     });
   },[]);
@@ -36,7 +34,7 @@ const TemporaryAuthorization = () => {
       <Link to="/">
         <li>Home</li>
       </Link>
-      <li>{username}</li>
+      <li>username: {username}</li>
     </ul>
   );
 };

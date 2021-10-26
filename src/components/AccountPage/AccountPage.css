@@ -26,3 +26,8 @@
   border-radius: 15px;
   width: 75%;
 }
+
+.form-setup form{
+  display: flex;
+  flex-direction: column;
+}

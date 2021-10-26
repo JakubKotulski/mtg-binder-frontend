@@ -1,0 +1,18 @@
+.card-galery img {
+  width: 60%;
+  padding: 10px;
+}
+
+.card-galery {
+  flex-wrap: wrap;
+  display: flex;
+  width: 90vw;
+  justify-content: space-around;
+  padding: 20px 0px;
+}
+
+.galery-single-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

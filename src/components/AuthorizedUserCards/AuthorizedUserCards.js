@@ -1,4 +1,5 @@
 import { Row, Col, Table } from "react-bootstrap";
+import "./AuthorizedUserCards.css";
 
 const AuthorizedUserCards = ({ cards }) => {
   return (
@@ -19,7 +20,10 @@ const AuthorizedUserCards = ({ cards }) => {
                 <td> {index + 1} </td>
                 <td> {card.name} </td>
                 <td> {card.price} </td>
-                <td> <img src={card.url} alt="img" /> </td>
+                <td>
+                  {" "}
+                  <img className="custom-width-user-s-card" src={card.url} alt="img" />{" "}
+                </td>
               </tr>
             ))}
           </tbody>
