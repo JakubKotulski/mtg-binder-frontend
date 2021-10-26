@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 
 const LoginForm = () => {
@@ -27,6 +27,7 @@ const LoginForm = () => {
       url: "http://localhost:4000/users/login",
     }).then((res) => {
       if (res.data === "Successfully Authenticated") {
+        console.log("res.data");
         history.push("/user-panel");
       } else {
         console.log(res.data);
@@ -34,17 +35,23 @@ const LoginForm = () => {
     });
   };
 
-
   return (
-    <div>
-      <form className="custom-form">
-        <input placeholder="Username" onChange={onChangeLoginUsername} />
-        <input placeholder="Password" onChange={onChangeloginPassword} />
+    <div className="form-setup">
+      <Form>
+        <Form.Group className="mb-3" controlId="formBasicLoginUsername">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text" placeholder="Username" onChange={onChangeLoginUsername} />
+        </Form.Group>
+
+        <Form.Group className="mb-3" controlId="formBasicLoginPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" onChange={onChangeloginPassword} />
+        </Form.Group>
+
         <Button variant="success" onClick={login}>
-          {" "}
-          Login{" "}
+          Submit
         </Button>
-      </form>
+      </Form>
     </div>
   );
 };

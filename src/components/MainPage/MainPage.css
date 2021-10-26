@@ -1,14 +1,22 @@
-.sold-card-box{
+.sold-card-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  
 }
 
-.overflow-box{
+.overflow-box {
   width: 90%;
   display: flex;
   /* justify-content: space-around; */
   overflow-x: scroll;
+}
+
+.custom-padding {
+  padding: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #9fc495;
+  color: white;
 }

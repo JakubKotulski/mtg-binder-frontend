@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 25%;
+  width: 100%;
   padding: 0px 20px;
 }
 
@@ -11,4 +11,8 @@
   display: flex;
   justify-content: center;
   border-top: 1px solid lightgray;
+}
+
+.single-card img{
+  width: 200%;
 }
