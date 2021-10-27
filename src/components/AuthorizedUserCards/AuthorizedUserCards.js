@@ -1,7 +1,19 @@
-import { Row, Col, Table } from "react-bootstrap";
+import { Row, Col, Table, Button } from "react-bootstrap";
 import "./AuthorizedUserCards.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const AuthorizedUserCards = ({ cards }) => {
+  const markAsSold = (id) => {
+    axios({
+      method: "PATCH",
+      withCredentials: true,
+      url: `http://localhost:4000/cards/${id}/sold`,
+    }).then((res) => {
+      console.log(res.data);
+    });
+  };
+
   return (
     <Row>
       <Col className="margin-custom">
@@ -12,6 +24,7 @@ const AuthorizedUserCards = ({ cards }) => {
               <th>Name</th>
               <th>Price</th>
               <th>Card</th>
+              <th>Options</th>
             </tr>
           </thead>
           <tbody>
@@ -23,6 +36,23 @@ const AuthorizedUserCards = ({ cards }) => {
                 <td>
                   {" "}
                   <img className="custom-width-user-s-card" src={card.url} alt="img" />{" "}
+                </td>
+                <td>
+                  <Button
+                    className="option-buttons-box"
+                    variant="dark"
+                    onClick={() => {
+                      console.log(card._id);
+                      markAsSold(card._id);
+                    }}
+                  >
+                    Mark as sold
+                  </Button>
+                  <Link to={`/card-update/${card._id}`}>
+                    <Button className="option-buttons-box" variant="warning">
+                      Update details
+                    </Button>
+                  </Link>
                 </td>
               </tr>
             ))}

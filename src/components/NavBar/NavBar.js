@@ -4,7 +4,7 @@ import TemporaryAuthorization from "../TemporaryAuthorization/TemporaryAuthoriza
 
 const NavBar = () => {
   return (
-    <nav className="nav">
+    <nav className="custom-nav">
       <TemporaryAuthorization />
     </nav>
   );

@@ -52,7 +52,8 @@ const AddCardForm = () => {
             <Form.Label>Card Url</Form.Label>
             <Form.Control type="text" placeholder="Card Url" onChange={onChangeCardUrl} />
           </Form.Group>
-          <Button variant="success"  onClick={addCard}>
+
+          <Button variant="success" type="submit" onClick={addCard}>
             Add Card
           </Button>
         </Form>
