@@ -9,17 +9,18 @@ import "./UserPanel.css";
 const UserPanel = () => {
   const history = useHistory();
   const [cards, setCards] = useState([]);
-
+  
   const getUser = useCallback(() => {
     axios({
       method: "GET",
       withCredentials: true,
       url: "http://localhost:4000/users/me",
     }).then((res) => {
-      if (res.data.username === null) {
+      if (!res.data.username) {
         history.push("/");
       } else {
-        console.log(res);
+        console.log(res.data.username);
+        console.log("hej")
       }
     });
   }, [history]);

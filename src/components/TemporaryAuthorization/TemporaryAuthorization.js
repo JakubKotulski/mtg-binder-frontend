@@ -1,9 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Container, Navbar } from "react-bootstrap";
+import axios from "axios";
 
 const TemporaryAuthorization = () => {
   const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
-  console.log(user);
+  const history = useHistory();
+
+  const logout = () => {
+    axios({
+      method: "POST",
+      withCredentials: true,
+      url: "http://localhost:4000/logout",
+    }).then((res) => {
+      localStorage.clear();
+      history.push("/");
+      window.location.reload();
+    });
+  };
 
   return (
     <>
@@ -17,7 +30,7 @@ const TemporaryAuthorization = () => {
                 <Link to="/user-panel">
                   <li>Your account</li>
                 </Link>
-                <li>Log out</li>
+                <li onClick={logout}>Log out</li>
                 <Link to="/">
                   <li>Home</li>
                 </Link>

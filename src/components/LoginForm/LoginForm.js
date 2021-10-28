@@ -29,8 +29,8 @@ const LoginForm = () => {
       console.log(res.data);
       if (res.data._id) {
         localStorage.setItem("user", JSON.stringify(res.data))
-        console.log(localStorage.getItem("user"));
         history.push("/user-panel");
+        window.location.reload();
       } else {
         console.log(res.data);
       }
