@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./CardsGaleryMainPage.css";
-import CardModal from "../CardModal/CardModal";
+import CardModal from "../../CardModal/CardModal";
 
 const CardsGaleryMainPage = ({ cards }) => {
   const [modalStatus, setModalStatus] = useState(false);

@@ -28,3 +28,13 @@
   vertical-align: middle;
   text-align: center;
 }
+
+@media only screen and (max-width: 576px){
+  .h3-header{
+    font-size: 25px;
+  }
+
+  .h3-header:last-of-type{
+    text-align: center;
+  }
+}

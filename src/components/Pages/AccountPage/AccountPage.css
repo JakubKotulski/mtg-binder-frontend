@@ -2,6 +2,7 @@
   width: 100vw;
   display: flex;
   justify-content: space-around;
+  padding-bottom: 40px;
 }
 
 .form-box {
@@ -30,4 +31,24 @@
 .form-setup form{
   display: flex;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 576px){
+  .main-box{
+    flex-direction: column;
+    align-items: center;
+    justify-content: unset;
+  }
+
+  .form-label{
+    display: none;
+  }
+
+  .form-control{
+    margin-bottom: 10px;
+  }
+
+  .form-box button{
+    margin: 20px 0px;
+  }
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
+import "./AddCardForm.css";
 
 const AddCardForm = () => {
   const [cardName, setCardName] = useState("");
@@ -29,13 +30,12 @@ const AddCardForm = () => {
       },
       withCredentials: true,
       url: "http://localhost:4000/cards",
-    }).then((res) => {
-      console.log(res.data);
-    });
+    })
   };
 
   return (
-    <Row>
+    <Row className="add-cards-box-padding">
+      <h3 className="h3-header"> Here you can add new cards to your collection </h3>
       <Col>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicName">

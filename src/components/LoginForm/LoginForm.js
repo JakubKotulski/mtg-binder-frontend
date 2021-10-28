@@ -28,11 +28,9 @@ const LoginForm = () => {
     }).then((res) => {
       console.log(res.data);
       if (res.data._id) {
-        localStorage.setItem("user", JSON.stringify(res.data))
+        localStorage.setItem("user", JSON.stringify(res.data));
         history.push("/user-panel");
         window.location.reload();
-      } else {
-        console.log(res.data);
       }
     });
   };
