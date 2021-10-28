@@ -1,3 +1,9 @@
 .message-box .message{
   margin: 20px 0px;
 }
+
+@media only screen and (max-width: 576px){
+  .message-box{
+    text-align: center;
+  }
+}

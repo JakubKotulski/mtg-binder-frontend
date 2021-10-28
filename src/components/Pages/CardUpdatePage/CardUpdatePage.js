@@ -1,14 +1,13 @@
 import "./CardUpdatePage.css";
 import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
-import { useParams } from "react-router";
+import { useParams, useHistory } from "react-router";
 import { Form, Button } from "react-bootstrap";
 
 const CardUpdatePage = () => {
+  const history = useHistory();
   const { id } = useParams();
   const [card, setCard] = useState([]);
-
-  console.log(id);
 
   const [cardName, setCardName] = useState("");
   const [cardPrice, setCardPrice] = useState();
@@ -26,6 +25,18 @@ const CardUpdatePage = () => {
     setCardUrl(event.target.value);
   };
 
+  const getUser = useCallback(() => {
+    axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:4000/users/me",
+    }).then((res) => {
+      if (!res.data.username) {
+        history.push("/");
+      }
+    });
+  }, [history]);
+
   const fetchCardDataToUpdate = useCallback(() => {
     axios({
       method: "GET",
@@ -42,6 +53,10 @@ const CardUpdatePage = () => {
   useEffect(() => {
     fetchCardDataToUpdate();
   }, [fetchCardDataToUpdate]);
+
+  useEffect(() => {
+    getUser();
+  }, [getUser]);
 
   const saveChanges = () => {
     axios({

@@ -1,0 +1,18 @@
+.add-cards-box-padding {
+  padding: 30px 0px;
+}
+
+@media only screen and (max-width: 576px) {
+  .add-cards-box-padding form {
+    padding: 20px 0px;
+    font-size: 20px;
+  }
+
+  .add-cards-box-padding form input {
+    font-size: 20px;
+  }
+
+  .add-cards-box-padding form button {
+    font-size: 20px;
+  }
+}

@@ -24,7 +24,13 @@ const TemporaryAuthorization = () => {
         <>
           <Navbar bg="light" expand="lg">
             <Container>
-              <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+              <Navbar.Brand>
+                {" "}
+                <img
+                  src="https://www.logomaker.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6khvOEqBROmR...NwXs1M3EMoAJtliMogvJo9...U8"
+                  alt="logo"
+                ></img>{" "}
+              </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Link to="/user-panel">
@@ -34,8 +40,19 @@ const TemporaryAuthorization = () => {
                 <Link to="/">
                   <li>Home</li>
                 </Link>
+                <li className="responsive-show">
+                  <b>User:</b> {user.username}
+                </li>
+                <Link to="/user-change-data">
+                  <li className="responsive-show"> Change your data</li>
+                </Link>
               </Navbar.Collapse>
-              <li>user: {user.username}</li>
+              <li className="responsive-hidden">
+                <b>User:</b> {user.username}
+              </li>
+              <Link to="/user-change-data">
+                <li className="responsive-hidden"> Change your data</li>
+              </Link>
             </Container>
           </Navbar>
         </>
@@ -43,7 +60,13 @@ const TemporaryAuthorization = () => {
         <>
           <Navbar bg="light" expand="lg">
             <Container>
-              <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+              <Navbar.Brand>
+                {" "}
+                <img
+                  src="https://www.logomaker.com/api/main/images/1j+ojFVDOMkX9Wytexe43D6khvOEqBROmR...NwXs1M3EMoAJtliMogvJo9...U8"
+                  alt="logo"
+                ></img>
+              </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Link to="/account">

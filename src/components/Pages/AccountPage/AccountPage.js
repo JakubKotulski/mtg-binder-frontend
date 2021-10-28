@@ -1,6 +1,6 @@
 import "./AccountPage.css";
-import LoginForm from "../LoginForm/LoginForm";
-import SignupForm from "../SignupForm/SignupForm";
+import LoginForm from "../../LoginForm/LoginForm";
+import SignupForm from "../../SignupForm/SignupForm";
 
 const AccountPage = () => {
   return (

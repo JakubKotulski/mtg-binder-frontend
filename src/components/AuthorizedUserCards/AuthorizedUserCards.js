@@ -1,18 +1,14 @@
 import { Row, Col, Table, Button } from "react-bootstrap";
 import "./AuthorizedUserCards.css";
 import axios from "axios";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AuthorizedUserCards = ({ cards }) => {
-  
-
   const markAsSold = (id) => {
     axios({
       method: "PATCH",
       withCredentials: true,
       url: `http://localhost:4000/cards/${id}/sold`,
-    }).then((res) => {
-      console.log(res.data);
     });
   };
 
@@ -22,27 +18,44 @@ const AuthorizedUserCards = ({ cards }) => {
         <Table striped bordered hover variant="dark">
           <thead>
             <tr>
-              <th>Nr</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Card</th>
-              <th>Options</th>
+              <th className="responsive-none">Nr</th>
+              <th className="responsive-none">Name</th>
+              <th className="responsive-none">Price</th>
+              <th className="responsive-table-header">Card</th>
+              <th className="responsive-none">Options</th>
             </tr>
           </thead>
           <tbody>
             {cards.map((card, index) => (
               <tr key={card._id}>
-                <td> {index + 1} </td>
-                <td> {card.name} </td>
-                <td> {card.price} </td>
+                <td className="responsive-none"> {index + 1} </td>
+                <td className="responsive-none"> {card.name} </td>
+                <td className="responsive-none"> {card.price} </td>
                 <td>
                   {" "}
                   <img className="custom-width-user-s-card" src={card.url} alt="img" />{" "}
+                  <div className="responsive-show">
+                    <Button
+                      className="option-buttons-box"
+                      variant="outline-light"
+                      onClick={() => {
+                        console.log(card._id);
+                        markAsSold(card._id);
+                      }}
+                    >
+                      Mark as sold
+                    </Button>
+                    <Link to={`/card-update/${card._id}`}>
+                      <Button className="option-buttons-box" variant="warning">
+                        Update details
+                      </Button>
+                    </Link>
+                  </div>
                 </td>
-                <td>
+                <td className="responsive-none">
                   <Button
                     className="option-buttons-box"
-                    variant="dark"
+                    variant="outline-light"
                     onClick={() => {
                       console.log(card._id);
                       markAsSold(card._id);

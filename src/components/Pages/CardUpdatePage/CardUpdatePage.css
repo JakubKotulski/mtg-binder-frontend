@@ -14,3 +14,17 @@
 .card-update-box form button{
   align-self: center;
 }
+
+@media only screen and (max-width: 576px) {
+  .card-update-box form {
+    width: 80%;
+  }
+
+  .card-update-box input{
+    padding: 15px;
+  }
+
+  .card-update-box button{
+    padding: 15px;
+  }
+}
