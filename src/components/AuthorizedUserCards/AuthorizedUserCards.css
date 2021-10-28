@@ -1,3 +1,11 @@
-.custom-width-user-s-card{
-  width: 10%;
+.custom-width-user-s-card {
+  width: 15%;
+}
+
+.option-buttons-box {
+  margin-right: 10px;
+}
+
+.option-buttons-box:last-of-type {
+  margin-left: 10px;
 }

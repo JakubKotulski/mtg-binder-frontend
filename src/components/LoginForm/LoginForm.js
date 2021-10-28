@@ -26,9 +26,11 @@ const LoginForm = () => {
       withCredentials: true,
       url: "http://localhost:4000/users/login",
     }).then((res) => {
-      if (res.data === "Successfully Authenticated") {
-        console.log("res.data");
+      console.log(res.data);
+      if (res.data._id) {
+        localStorage.setItem("user", JSON.stringify(res.data))
         history.push("/user-panel");
+        window.location.reload();
       } else {
         console.log(res.data);
       }
