@@ -1,7 +1,6 @@
 import "./LastSoldCard.css";
 
 const LastSoldCard = ({ cards }) => {
-  console.log("cards after fetch ", cards);
   return (
     <>
       {cards.map((card) => (

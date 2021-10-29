@@ -1,6 +1,7 @@
 import { Link, useHistory } from "react-router-dom";
 import { Container, Navbar } from "react-bootstrap";
 import axios from "axios";
+import { backendUrl } from "../../config";
 
 const TemporaryAuthorization = () => {
   const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : null;
@@ -10,7 +11,7 @@ const TemporaryAuthorization = () => {
     axios({
       method: "POST",
       withCredentials: true,
-      url: "http://localhost:4000/logout",
+      url: `${backendUrl}/logout`,
     }).then((res) => {
       localStorage.clear();
       history.push("/");

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import "./AddCardForm.css";
+import { backendUrl } from "../../config";
 
 const AddCardForm = () => {
   const [cardName, setCardName] = useState("");
@@ -29,7 +30,7 @@ const AddCardForm = () => {
         url: cardUrl,
       },
       withCredentials: true,
-      url: "http://localhost:4000/cards",
+      url: `${backendUrl}/cards`,
     })
   };
 

@@ -1,6 +1,7 @@
 import "./MainPage.css";
 import { useState, useEffect } from "react";
 import CardsGaleryMainPage from "../CardsGaleryMainPage/CardsGaleryMainPage";
+import { backendUrl } from "../../../config";
 
 const MainPage = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const MainPage = () => {
   const [cards, setCards] = useState([]);
 
   const fetchCards = async () => {
-    const data = await fetch("http://localhost:4000/cards");
+    const data = await fetch(`${backendUrl}/cards`);
 
     const cards = await data.json();
     setCards(cards);

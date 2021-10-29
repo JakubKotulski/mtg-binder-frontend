@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import AuthorizedUserCards from "../../AuthorizedUserCards/AuthorizedUserCards";
 import AddCardForm from "../../AddCardForm/AddCardForm";
 import "./UserPanel.css";
+import { backendUrl } from "../../../config";
 
 const UserPanel = () => {
   const history = useHistory();
@@ -14,7 +15,7 @@ const UserPanel = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/users/me",
+      url: `${backendUrl}/users/me`,
     }).then((res) => {
       if (!res.data.username) {
         history.push("/");
@@ -26,7 +27,7 @@ const UserPanel = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/cards/my",
+      url: `${backendUrl}/cards/my`,
     }).then((res) => {
       setCards(res.data);
     });

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import ActionInfo from "../ActionInfo/ActionInfo";
+import { backendUrl } from "../../config";
 
 const SignupForm = () => {
   const [signupUsername, setSignupUsername] = useState("");
@@ -42,7 +43,7 @@ const SignupForm = () => {
         phoneNumber: signupPhoneNumber,
       },
       withCredentials: true,
-      url: "http://localhost:4000/users",
+      url: `${backendUrl}}/users`,
     }).then(() => {
       setSuccess(true);
       setTimeout(() => setSuccess(false), 10000);

@@ -2,13 +2,14 @@ import { Row, Col, Table, Button } from "react-bootstrap";
 import "./AuthorizedUserCards.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { backendUrl } from "../../config";
 
 const AuthorizedUserCards = ({ cards }) => {
   const markAsSold = (id) => {
     axios({
       method: "PATCH",
       withCredentials: true,
-      url: `http://localhost:4000/cards/${id}/sold`,
+      url: `${backendUrl}/cards/${id}/sold`,
     });
   };
 

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
 import { useParams, useHistory } from "react-router";
 import { Form, Button } from "react-bootstrap";
+import { backendUrl } from "../../../config";
 
 const CardUpdatePage = () => {
   const history = useHistory();
@@ -29,7 +30,7 @@ const CardUpdatePage = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/users/me",
+      url: `${backendUrl}/users/me`,
     }).then((res) => {
       if (!res.data.username) {
         history.push("/");
@@ -41,7 +42,7 @@ const CardUpdatePage = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: `http://localhost:4000/cards/${id}`,
+      url: `${backendUrl}/cards/${id}`,
     }).then((res) => {
       setCard(res.data);
       setCardName(res.data.name);
@@ -67,7 +68,7 @@ const CardUpdatePage = () => {
         url: cardUrl,
       },
       withCredentials: true,
-      url: `http://localhost:4000/cards/${id}`,
+      url: `${backendUrl}/cards/${id}`,
     }).then((res) => {
       setCard(res.data);
     });

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
 import { useHistory } from "react-router";
 import { Form, Button } from "react-bootstrap";
+import { backendUrl } from "../../../config";
 
 const ChangeUserDataPage = () => {
   const [name, setName] = useState("");
@@ -26,7 +27,7 @@ const ChangeUserDataPage = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/users/me",
+      url: `${backendUrl}/users/me`,
     }).then((res) => {
       if (!res.data.username) {
         history.push("/");
@@ -38,7 +39,7 @@ const ChangeUserDataPage = () => {
     axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:4000/users/me",
+      url: `${backendUrl}/users/me`,
     }).then((res) => {
       setName(res.data.name);
       setSurname(res.data.surname);
@@ -65,7 +66,7 @@ const ChangeUserDataPage = () => {
         _id: id,
       },
       withCredentials: true,
-      url: `http://localhost:4000/users/update`,
+      url: `${backendUrl}/users/update`,
     }).then((res) => {
       console.log(res);
     });

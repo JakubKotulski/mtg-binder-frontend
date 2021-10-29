@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
 import axios from "axios";
+import { backendUrl } from "../../config";
 
 const LoginForm = () => {
   const history = useHistory();
@@ -24,7 +25,7 @@ const LoginForm = () => {
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:4000/users/login",
+      url: `${backendUrl}/users/login`,
     }).then((res) => {
       console.log(res.data);
       if (res.data._id) {
