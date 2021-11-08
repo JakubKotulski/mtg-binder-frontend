@@ -43,7 +43,7 @@ const SignupForm = () => {
         phoneNumber: signupPhoneNumber,
       },
       withCredentials: true,
-      url: `${backendUrl}}/users`,
+      url: `${backendUrl}/users`,
     }).then(() => {
       setSuccess(true);
       setTimeout(() => setSuccess(false), 10000);
