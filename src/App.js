@@ -7,7 +7,6 @@ import CardUpdatePage from "./components/Pages/CardUpdatePage/CardUpdatePage";
 import ChangeUserDataPage from "./components/Pages/ChangeUserDataPage/ChangeUserDataPage";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// test
 
 function App() {
   return (
